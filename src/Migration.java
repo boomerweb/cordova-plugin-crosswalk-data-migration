@@ -165,8 +165,8 @@ public class Migration extends CordovaPlugin {
     protected void doColdRestart() {
         String baseError = "Unable to cold restart application: ";
         try {
-            logInfo("Cold restarting application");
-            Context c = applicationContext;
+            Log.d(TAG, "Cold restarting application");
+            Context c = context;
             //check if the context is given
             if (c != null) {
                 //fetch the packagemanager so we can get the default launch activity
@@ -192,16 +192,16 @@ public class Migration extends CordovaPlugin {
                         //kill the application
                         System.exit(0);
                     } else {
-                        handleError(baseError+"StartActivity is null");
+                        Log.e(TAG, baseError+"StartActivity is null");
                     }
                 } else {
-                    handleError(baseError+"PackageManager is null");
+                    Log.e(TAG, baseError+"PackageManager is null");
                 }
             } else {
-                handleError(baseError+"Context is null");
+                Log.e(TAG, baseError+"Context is null");
             }
         } catch (Exception ex) {
-            handleError(baseError+ ex.getMessage());
+            Log.e(TAG, baseError+ ex.getMessage());
         }
     }
 
