@@ -5,13 +5,18 @@ package cordova.plugins.crosswalk;
  */
 
 import android.app.Activity;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Intent;
 import android.content.Context;
 import android.os.Build;
 import android.util.Log;
+import android.content.pm.PackageManager;
 
 import org.apache.cordova.CordovaInterface;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CordovaWebView;
+
 
 import java.io.File;
 
